@@ -1,3 +1,8 @@
+[![Website](https://img.shields.io/badge/Website-coredocs.eu-9146FF?style=for-the-badge&logo=google-chrome&logoColor=white)](https://coredocs.eu)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
+[![Made with Python](https://img.shields.io/badge/Made%20with-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Last Commit](https://img.shields.io/github/last-commit/swaQQii/coredocs-netbox-scripts?style=for-the-badge)](https://github.com/swaQQii/coredocs-netbox-scripts/commits/main)
+
 # coredocs-netbox-scripts
 
 Collection of reusable **NetBox Custom Scripts** – automation examples for:
