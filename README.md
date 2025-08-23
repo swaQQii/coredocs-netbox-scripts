@@ -28,10 +28,12 @@ Collection of reusable **NetBox Custom Scripts** – automation examples for:
 
 ## Repository Structure
 
+```text
 .
-├── 00_hello_script.py # Minimal example: inputs, logging, dry-run
-├── 01_reserve_ipv4.py # Reserve next free IPv4 with optional DNS name
-└── (more coming soon) # VM creation, interface automation, etc.
+├── 00_hello_script.py     # Minimal example: inputs, logging, dry-run
+├── 01_reserve_ipv4.py     # Reserve next free IPv4 with optional DNS name
+└── (more coming soon)     # VM creation, interface automation, etc.
+```
 
 ---
 
