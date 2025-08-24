@@ -14,6 +14,17 @@ Collection of reusable **NetBox Custom Scripts** – automation examples for:
 
 ---
 
+## Table of Contents
+- [Getting Started](#getting-started)
+- [Available Scripts](#available-scripts)
+  - [Hello Script](docs/00_hello_script.md)
+  - [Reserve IPv4](docs/01_reserve_ipv4.md)
+  - [Create Site (Auto-Geo)](docs/02_create_site_auto_geo.md)
+- [License](#license)
+- [Related](#related)
+
+---
+
 ## Getting Started
 
 ### Requirements
@@ -28,6 +39,14 @@ Collection of reusable **NetBox Custom Scripts** – automation examples for:
 4. Run scripts via the NetBox web interface.  
 - Toggle **Commit** off → dry run (no database changes)  
 - Toggle **Commit** on → changes are saved  
+
+---
+
+## Available Scripts
+
+- **[Hello Script](docs/00_hello_script.md)** – Minimal example to demonstrate inputs, logging, and commit.  
+- **[Reserve IPv4](docs/01_reserve_ipv4.md)** – Finds the first free IPv4 in a prefix and assigns it.  
+- **[Create Site (Auto-Geo)](docs/02_create_site_auto_geo.md)** – Creates a Site using OSM geocoding, coordinates, and timezone auto-detection.  
 
 ---
 
