@@ -17,9 +17,9 @@ Collection of reusable **NetBox Custom Scripts** – automation examples for:
 ## Table of Contents
 - [Getting Started](#getting-started)
 - [Available Scripts](#available-scripts)
-  - [Hello Script](docs/00_hello_script.md)
-  - [Reserve IPv4](docs/01_reserve_ipv4.md)
-  - [Create Site (Auto-Geo)](docs/02_create_site_auto_geo.md)
+   - [Hello Script](docs/hello_script.md) → [Code](scripts/00_hello_script.py)
+   - [Reserve IPv4 Script](docs/reserve_ipv4.md) → [Code](scripts/01_reserve_ipv4.py)
+   - [Create Site (Auto Geo)](docs/create_site_auto_geo.md) → [Code](scripts/02_create_site_auto_geo.py)
 - [License](#license)
 - [Related](#related)
 
