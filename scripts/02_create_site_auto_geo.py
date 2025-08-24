@@ -1,4 +1,3 @@
-# create_site_osm_structured_auto_tz.py
 from extras.scripts import Script, StringVar, ObjectVar, MultiObjectVar
 from dcim.models import Site, Region, SiteGroup
 from dcim.choices import SiteStatusChoices
@@ -15,7 +14,7 @@ class CreateSiteOSM(Script):
     site_name = StringVar(label="Site name")
     street = StringVar(label="Street")
     house_number = StringVar(label="House number")
-    addition = StringVar(label="Addition", required=False)  # appended to house number, e.g. 12a
+    addition = StringVar(label="Addition", required=False)
     postal_code = StringVar(label="Postal code", required=False)
     city = StringVar(label="City")
     shipping_address = StringVar(label="Shipping address", required=False)
