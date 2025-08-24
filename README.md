@@ -17,7 +17,7 @@ Collection of reusable **NetBox Custom Scripts** – automation examples for:
 ## Getting Started
 
 ### Requirements
-- [NetBox](https://github.com/netbox-community/netbox) (v3.6+ recommended)  
+- [NetBox](https://github.com/netbox-community/netbox) (v4.3+ recommended)  
 - Python 3.x environment (ships with NetBox)  
 
 ### Usage
@@ -28,17 +28,6 @@ Collection of reusable **NetBox Custom Scripts** – automation examples for:
 4. Run scripts via the NetBox web interface.  
 - Toggle **Commit** off → dry run (no database changes)  
 - Toggle **Commit** on → changes are saved  
-
----
-
-## Repository Structure
-
-```text
-.
-├── 00_hello_script.py     # Minimal example: inputs, logging, dry-run
-├── 01_reserve_ipv4.py     # Reserve next free IPv4 with optional DNS name
-└── (more coming soon)     # VM creation, interface automation, etc.
-```
 
 ---
 
