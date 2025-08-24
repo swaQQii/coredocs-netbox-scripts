@@ -2,6 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Last Commit](https://img.shields.io/github/last-commit/swaQQii/coredocs-netbox-scripts?style=for-the-badge)](https://github.com/swaQQii/coredocs-netbox-scripts/commits/main)
+[![Lint](https://github.com/swaQQii/coredocs-netbox-scripts/actions/workflows/lint.yml/badge.svg)](https://github.com/swaQQii/coredocs-netbox-scripts/actions/workflows/lint.yml)
 
 # coredocs-netbox-scripts
 
