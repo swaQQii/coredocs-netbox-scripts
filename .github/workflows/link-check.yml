@@ -1,0 +1,27 @@
+name: Check Broken Links
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    name: Check for Broken Links
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Install Lychee
+        run: |
+          curl -sSfL https://github.com/lycheeverse/lychee/releases/latest/download/lychee-linux-x86_64.tar.gz | tar -xz -C /usr/local/bin
+
+      - name: Run Link Checker
+        run: |
+          lychee --verbose --exclude "https://coredocs.eu" --recursive .

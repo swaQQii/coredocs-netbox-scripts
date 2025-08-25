@@ -2,6 +2,7 @@
 
 [![Lint](https://img.shields.io/github/actions/workflow/status/swaQQii/coredocs-netbox-scripts/lint.yml?style=for-the-badge&label=Lint%20CI&logo=github)](https://github.com/swaQQii/coredocs-netbox-scripts/actions/workflows/lint.yml)
 [![Style](https://img.shields.io/github/actions/workflow/status/swaQQii/coredocs-netbox-scripts/style.yml?style=for-the-badge&label=Style%20CI&logo=github)](https://github.com/swaQQii/coredocs-netbox-scripts/actions/workflows/style.yml)
+[![Link Check](https://img.shields.io/github/actions/workflow/status/swaQQii/coredocs-netbox-scripts/link-check.yml?style=for-the-badge&label=Link%20Check&logo=github)](https://github.com/swaQQii/coredocs-netbox-scripts/actions/workflows/link-check.yml)
 
 [![Last Commit](https://img.shields.io/github/last-commit/swaQQii/coredocs-netbox-scripts?style=for-the-badge)](https://github.com/swaQQii/coredocs-netbox-scripts/commits/main)
 
@@ -23,9 +24,9 @@ Collection of reusable **NetBox Custom Scripts** – automation examples for:
 
 - [Getting Started](#getting-started)
 - [Available Scripts](#available-scripts)
-  - [Hello Script](docs/hello_script.md) → [Code](scripts/00_hello_script.py)
-  - [Reserve IPv4 Script](docs/reserve_ipv4.md) → [Code](scripts/01_reserve_ipv4.py)
-  - [Create Site (Auto Geo)](docs/create_site_auto_geo.md) → [Code](scripts/02_create_site_auto_geo.py)
+  - [Hello Script](docs/hello_script.md) → [Code](scripts/01_hello_script.py)
+  - [Reserve IPv4 Script](docs/reserve_ipv4.md) → [Code](scripts/02_reserve_ipv4.py)
+  - [Create Site (Auto Geo)](docs/create_site_auto_geo.md) → [Code](scripts/03_create_site_osm.py)
 - [License](#license)
 - [Related](#related)
 
@@ -53,9 +54,9 @@ Collection of reusable **NetBox Custom Scripts** – automation examples for:
 
 ## Available Scripts
 
-- **[Hello Script](docs/00_hello_script.md)** – Minimal example to demonstrate inputs, logging, and commit.
-- **[Reserve IPv4](docs/01_reserve_ipv4.md)** – Finds the first free IPv4 in a prefix and assigns it.
-- **[Create Site (Auto-Geo)](docs/02_create_site_auto_geo.md)** – Creates a Site using OSM geocoding, coordinates, and timezone auto-detection.
+- **[Hello Script](docs/hello_script.md)** – Minimal example to demonstrate inputs, logging, and commit.
+- **[Reserve IPv4](docs/reserve_ipv4.md)** – Finds the first free IPv4 in a prefix and assigns it.
+- **[Create Site (Auto-Geo)](docs/create_site_auto_geo.md)** – Creates a Site using OSM geocoding, coordinates, and timezone auto-detection.
 
 ---
 

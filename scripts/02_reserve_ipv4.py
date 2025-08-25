@@ -2,14 +2,14 @@ from extras.scripts import ObjectVar, Script, StringVar
 from ipam.models import IPAddress, Prefix
 
 
-class ReserveIPv4(Script):
+class ReserveIPv4Script(Script):
     class Meta:
-        name = "Reserve IPv4"
+        name = "Reserve IPv4 Script"
         description = (
             "Find the first free IPv4 in the selected prefix and create an IPAddress"
         )
 
-    prefix = ObjectVar(
+    ipv4_prefix = ObjectVar(
         model=Prefix,
         required=True,
         label="IPv4 Prefix",
@@ -17,11 +17,11 @@ class ReserveIPv4(Script):
     )
     dns_name = StringVar(
         required=False,
-        label="DNS name (optional)",
+        label="DNS Name (optional)",
         description="Stored as DNS name, e.g., 'web01'.",
     )
 
-    def _pick_free_ip(self, prefix):
+    def _find_free_ip(self, prefix):
         for host in prefix.prefix.iter_hosts():
             ip_str = str(host)
             if IPAddress.objects.filter(address__startswith=f"{ip_str}/").exists():
@@ -31,20 +31,20 @@ class ReserveIPv4(Script):
             return ip_str
         return None
 
-    def run(self, data, commit):
-        prefix = data["prefix"]
-        dns_name = (data.get("dns_name") or "").strip()
+    def run(self, inputs, commit):
+        prefix = inputs["ipv4_prefix"]
+        dns_name = (inputs.get("dns_name") or "").strip()
 
         if prefix.prefix.version != 4:
             self.log_failure(f"{prefix.prefix} is not an IPv4 prefix.")
             return "Aborted."
 
-        ip_plain = self._pick_free_ip(prefix)
-        if not ip_plain:
+        free_ip = self._find_free_ip(prefix)
+        if not free_ip:
             self.log_failure(f"No free IP found in {prefix.prefix}.")
             return "Aborted."
 
-        ip_with_mask = f"{ip_plain}/{prefix.prefix.prefixlen}"
+        ip_with_mask = f"{free_ip}/{prefix.prefix.prefixlen}"
 
         ip_obj = IPAddress(address=ip_with_mask, dns_name=dns_name or "")
         if commit:
