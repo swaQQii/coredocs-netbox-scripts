@@ -1,0 +1,32 @@
+# nur Markdown und MDX prüfen
+include = ["**/*.md", "**/*.mdx"]
+
+# Cache für schnellere Folgeläufe
+cache = true
+max_cache_age = "1d"
+
+# Performance
+max_concurrency = 16
+timeout = 10
+
+# Stabilität
+retry_wait_time = 2
+max_retries = 2
+
+# weniger Rauschen
+exclude_mail = true
+exclude_loopback = true
+
+# Domains mit Rate-Limits ausschließen
+exclude = [
+  "https://coredocs.eu",
+  "https://img.shields.io",
+  "https://shields.io",
+  "https://discord.gg",
+]
+
+# nur https
+scheme = ["https"]
+
+# als Fehler zählen
+fail = "all"
