@@ -56,7 +56,7 @@ Collection of reusable **NetBox Custom Scripts** – automation examples for:
 
 - **[Hello Script](docs/hello_script.md)** – Minimal example to demonstrate inputs, logging, and commit.
 - **[Reserve IPv4](docs/reserve_ipv4.md)** – Finds the first free IPv4 in a prefix and assigns it.
-- **[Create Site (Auto-Geo)](docs/create_site_auto_geo.md)** – Creates a Site using OSM geocoding, coordinates, and timezone auto-detection.
+- **[Create Site (Auto-Geo)](docs/create_site_osm.md)** – Creates a Site using OSM geocoding, coordinates, and timezone auto-detection.
 
 ---
 
