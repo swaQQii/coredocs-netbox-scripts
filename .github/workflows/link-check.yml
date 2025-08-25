@@ -8,6 +8,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: lycheeverse/lychee-action@v2
         with:
+          lycheeVersion: latest
           args: --config lychee.toml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
