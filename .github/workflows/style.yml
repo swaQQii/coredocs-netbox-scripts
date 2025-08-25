@@ -1,0 +1,26 @@
+name: Style checks (black + isort)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  style:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install tools
+        run: pip install black isort
+
+      - name: Black (check only)
+        run: black --check scripts
+
+      - name: isort (check only)
+        run: isort --check-only scripts

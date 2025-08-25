@@ -1,0 +1,21 @@
+[tool.black]
+line-length = 88
+target-version = ["py311"]
+include = "scripts/.*\\.py$"
+
+[tool.isort]
+profile = "black"
+line_length = 88
+src_paths = ["scripts"]
+
+[tool.pylint."MESSAGES CONTROL"]
+disable = [
+  "C0114",  # missing-module-docstring
+  "C0115",  # missing-class-docstring
+  "C0116",  # missing-function-docstring
+]
+
+[tool.pylint.BASIC]
+good-names = ["i","j","k","x","y","ip","vm","tz","hn","pfx"]
+
+[tool.pylint.MASTER]
