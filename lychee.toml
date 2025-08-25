@@ -1,7 +1,3 @@
-glob = true
-
-include = ["**/*.md", "**/*.mdx"]
-
 cache = true
 max_cache_age = "1d"
 
