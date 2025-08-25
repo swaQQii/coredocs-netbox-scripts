@@ -2,7 +2,6 @@
 
 [![Lint](https://img.shields.io/github/actions/workflow/status/swaQQii/coredocs-netbox-scripts/lint.yml?style=for-the-badge&label=Lint%20CI&logo=github)](https://github.com/swaQQii/coredocs-netbox-scripts/actions/workflows/lint.yml)
 [![Style](https://img.shields.io/github/actions/workflow/status/swaQQii/coredocs-netbox-scripts/style.yml?style=for-the-badge&label=Style%20CI&logo=github)](https://github.com/swaQQii/coredocs-netbox-scripts/actions/workflows/style.yml)
-[![Link Check](https://img.shields.io/github/actions/workflow/status/swaQQii/coredocs-netbox-scripts/link-check.yml?style=for-the-badge&label=Link%20Check&logo=github)](https://github.com/swaQQii/coredocs-netbox-scripts/actions/workflows/link-check.yml)
 
 [![Last Commit](https://img.shields.io/github/last-commit/swaQQii/coredocs-netbox-scripts?style=for-the-badge)](https://github.com/swaQQii/coredocs-netbox-scripts/commits/main)
 
