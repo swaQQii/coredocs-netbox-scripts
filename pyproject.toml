@@ -17,5 +17,3 @@ disable = [
 
 [tool.pylint.BASIC]
 good-names = ["i","j","k","x","y","ip","vm","tz","hn","pfx"]
-
-[tool.pylint.MASTER]

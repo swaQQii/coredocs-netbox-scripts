@@ -1,10 +1,12 @@
-from extras.scripts import Script, StringVar, ObjectVar, MultiObjectVar
-from dcim.models import Site, Region, SiteGroup
+import re
+from decimal import ROUND_HALF_UP, Decimal, InvalidOperation
+
+import requests
 from dcim.choices import SiteStatusChoices
-from ipam.models import ASN
+from dcim.models import Region, Site, SiteGroup
 from django.utils.text import slugify
-from decimal import Decimal, ROUND_HALF_UP, InvalidOperation
-import re, requests
+from extras.scripts import MultiObjectVar, ObjectVar, Script, StringVar
+from ipam.models import ASN
 
 
 class CreateSiteOSM(Script):

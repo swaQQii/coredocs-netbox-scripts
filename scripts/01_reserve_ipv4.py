@@ -1,5 +1,5 @@
-from extras.scripts import Script, ObjectVar, StringVar
-from ipam.models import Prefix, IPAddress
+from extras.scripts import ObjectVar, Script, StringVar
+from ipam.models import IPAddress, Prefix
 
 
 class ReserveIPv4(Script):
