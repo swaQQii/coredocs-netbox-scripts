@@ -20,7 +20,11 @@ jobs:
 
       - name: Install Lychee
         run: |
-          curl -sSfL https://github.com/lycheeverse/lychee/releases/latest/download/lychee-linux-x86_64.tar.gz | tar -xz -C /usr/local/bin
+          sudo apt update
+          sudo apt install -y curl build-essential libssl-dev
+          curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+          source $HOME/.cargo/env
+          cargo install lychee
 
       - name: Run Link Checker
         run: |
