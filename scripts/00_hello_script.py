@@ -1,5 +1,6 @@
 from extras.scripts import Script, StringVar
 
+
 class Hello(Script):
     class Meta:
         name = "Hello"

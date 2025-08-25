@@ -6,6 +6,7 @@ from django.utils.text import slugify
 from decimal import Decimal, ROUND_HALF_UP, InvalidOperation
 import re, requests
 
+
 class CreateSiteOSM(Script):
     class Meta:
         name = "Create Site OSM"
@@ -40,44 +41,80 @@ class CreateSiteOSM(Script):
         return re.sub(r"[^0-9a-z]", "", (s or "").lower())
 
     def _pick_city(self, a: dict) -> str:
-        return a.get("city") or a.get("town") or a.get("village") or a.get("municipality") or a.get("hamlet") or ""
+        return (
+            a.get("city")
+            or a.get("town")
+            or a.get("village")
+            or a.get("municipality")
+            or a.get("hamlet")
+            or ""
+        )
 
     def _format_address(self, a: dict, house_full: str) -> str:
-        street = a.get("road") or a.get("pedestrian") or a.get("residential") or a.get("footway") or ""
+        street = (
+            a.get("road")
+            or a.get("pedestrian")
+            or a.get("residential")
+            or a.get("footway")
+            or ""
+        )
         postcode = a.get("postcode") or ""
         city = self._pick_city(a)
         state = a.get("state") or ""
         country = a.get("country") or ""
         line1 = " ".join([p for p in [street, house_full] if p])
         parts = [line1, " ".join([p for p in [postcode, city] if p])]
-        if state: parts.append(state)
-        if country: parts.append(country)
+        if state:
+            parts.append(state)
+        if country:
+            parts.append(country)
         return ", ".join([p for p in parts if p])
 
     def _geocode_structured(self, street, house_full, postal_code, city):
-        params = {"format":"json","limit":1,"addressdetails":1,"street":f"{street} {house_full}","city":city}
-        if postal_code: params["postalcode"] = postal_code
-        r = requests.get("https://nominatim.openstreetmap.org/search", params=params,
-                         headers={"User-Agent":"netbox-script/1.0"}, timeout=8)
+        params = {
+            "format": "json",
+            "limit": 1,
+            "addressdetails": 1,
+            "street": f"{street} {house_full}",
+            "city": city,
+        }
+        if postal_code:
+            params["postalcode"] = postal_code
+        r = requests.get(
+            "https://nominatim.openstreetmap.org/search",
+            params=params,
+            headers={"User-Agent": "netbox-script/1.0"},
+            timeout=8,
+        )
         r.raise_for_status()
         data = r.json()
         return data[0] if data else None
 
     def _geocode_fallback(self, street, house_full, postal_code, city):
         q = ", ".join([p for p in [f"{street} {house_full}", postal_code, city] if p])
-        r = requests.get("https://nominatim.openstreetmap.org/search",
-                         params={"format":"json","limit":1,"addressdetails":1,"q":q},
-                         headers={"User-Agent":"netbox-script/1.0"}, timeout=8)
+        r = requests.get(
+            "https://nominatim.openstreetmap.org/search",
+            params={"format": "json", "limit": 1, "addressdetails": 1, "q": q},
+            headers={"User-Agent": "netbox-script/1.0"},
+            timeout=8,
+        )
         r.raise_for_status()
         data = r.json()
         return data[0] if data else None
 
     def _infer_timezone(self, lat: float, lon: float) -> str:
         try:
-            r = requests.get("https://api.open-meteo.com/v1/forecast",
-                             params={"latitude":float(lat),"longitude":float(lon),
-                                     "current":"temperature_2m","timezone":"auto"},
-                             headers={"User-Agent":"netbox-script/1.0"}, timeout=8)
+            r = requests.get(
+                "https://api.open-meteo.com/v1/forecast",
+                params={
+                    "latitude": float(lat),
+                    "longitude": float(lon),
+                    "current": "temperature_2m",
+                    "timezone": "auto",
+                },
+                headers={"User-Agent": "netbox-script/1.0"},
+                timeout=8,
+            )
             r.raise_for_status()
             tz = (r.json().get("timezone") or "").strip()
             return tz if "/" in tz else ""
@@ -116,7 +153,13 @@ class CreateSiteOSM(Script):
             self.log_failure("Invalid coordinates from OSM.")
             return "Aborted: invalid coordinates."
 
-        osm_street = (addr.get("road") or addr.get("pedestrian") or addr.get("residential") or addr.get("footway") or "").strip()
+        osm_street = (
+            addr.get("road")
+            or addr.get("pedestrian")
+            or addr.get("residential")
+            or addr.get("footway")
+            or ""
+        ).strip()
         osm_hn = (addr.get("house_number") or "").strip()
         osm_post = (addr.get("postcode") or "").strip()
         if not self._eq_simple(street, osm_street):
@@ -134,7 +177,8 @@ class CreateSiteOSM(Script):
 
         self.log_success(f"Geocoding OK: {lat},{lon}")
         self.log_info(f"Normalized address: {final_addr}")
-        if tz: self.log_info(f"Time zone: {tz}")
+        if tz:
+            self.log_info(f"Time zone: {tz}")
 
         site = Site(
             name=name,
@@ -152,6 +196,9 @@ class CreateSiteOSM(Script):
         site.full_clean()
         if commit:
             site.save()
-            if asns: site.asns.set(asns)
+            if asns:
+                site.asns.set(asns)
             self.log_success(f"Site '{site.name}' created.")
-        return f"{site.name} | addr='{final_addr}' | lat={lat} lon={lon} | tz={tz or ''}"
+        return (
+            f"{site.name} | addr='{final_addr}' | lat={lat} lon={lon} | tz={tz or ''}"
+        )
