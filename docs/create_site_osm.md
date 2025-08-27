@@ -16,7 +16,7 @@ A NetBox Custom Script that creates new **Sites** with automatically enriched me
 
 2. **Results**
 
-   ![Geocoding Results](images/create_site_osm_2.png)
+   ![Results](images/create_site_osm_2.png)
 
 3. **Created Site in NetBox**
 
