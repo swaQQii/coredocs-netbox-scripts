@@ -12,7 +12,7 @@ It simply prints a greeting like `Hello, world!` or `Hello, <Name>`.
 
 1. **Input Form in NetBox**
 
-   ![Input Form](images/hello_1png)
+   ![Input Form](images/hello_1.png)
 
 2. **Results**
 
