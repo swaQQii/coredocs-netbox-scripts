@@ -70,3 +70,5 @@ You are free to use, modify, and distribute these scripts with attribution.
 
 These scripts are part of the **[CoreDocs](https://coredocs.eu)** knowledge base project,  
 which provides open IT guides, tools, and documentation resources.
+
+[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/Y6pGPFacvp)
