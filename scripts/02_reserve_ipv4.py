@@ -58,5 +58,3 @@ class ReserveIPv4Script(Script):
             )
 
         return f"Prefix: {prefix.prefix}, IP: {ip_with_mask}, Commit={commit}"
-
-
