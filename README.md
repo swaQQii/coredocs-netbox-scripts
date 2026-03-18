@@ -1,6 +1,5 @@
 [![Website](https://img.shields.io/badge/Website-coredocs.eu-9146FF?style=for-the-badge&logo=google-chrome&logoColor=white)](https://coredocs.eu)
 [![Lint](https://img.shields.io/github/actions/workflow/status/swaQQii/coredocs-netbox-scripts/lint.yml?style=for-the-badge&label=Lint%20CI&logo=github)](https://github.com/swaQQii/coredocs-netbox-scripts/actions/workflows/lint.yml)
-[![Style](https://img.shields.io/github/actions/workflow/status/swaQQii/coredocs-netbox-scripts/style.yml?style=for-the-badge&label=Style%20CI&logo=github)](https://github.com/swaQQii/coredocs-netbox-scripts/actions/workflows/style.yml)
 [![Last Commit](https://img.shields.io/github/last-commit/swaQQii/coredocs-netbox-scripts?style=for-the-badge)](https://github.com/swaQQii/coredocs-netbox-scripts/commits/main)
 
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
