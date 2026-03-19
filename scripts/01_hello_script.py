@@ -12,3 +12,6 @@ class HelloScript(Script):
         name = (inputs.get("greeting_name") or "world").strip()
         self.log_info(f"Hello, {name}!")
         return f"Greeting sent (commit={commit})"
+
+
+
